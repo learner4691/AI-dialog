@@ -1,6 +1,4 @@
-const {
-  generateMockResponse,
-} = require("../services/mock.service");
+const { generateAIResponse } = require("../services/ai.service");
 
 const chatController = async (req, res) => {
   try {
@@ -12,7 +10,7 @@ const chatController = async (req, res) => {
       });
     }
 
-    const response = await generateMockResponse(message);
+    const response = await generateAIResponse(message);
 
     return res.status(200).json(response);
   } catch (error) {
