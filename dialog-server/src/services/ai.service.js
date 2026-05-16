@@ -25,11 +25,23 @@ const withRetry = async (fn, retries = 2) => {
 };
 
 const generateAIResponse = async (message) => {
+  console.log("[AI] request:", message);
+  console.log("AI service hit");
+
   const handler = useOpenAI
     ? () => generateOpenAIResponse(message)
     : () => generateMockResponse(message);
 
-  return await withRetry(handler, 2);
+  try {
+    const result = await withRetry(handler, 2);
+    console.log("[AI] response:", result);
+
+    return result;
+  } catch (err) {
+    console.error("[AI] error:", err);
+
+    throw err;
+  }
 };
 
 module.exports = {

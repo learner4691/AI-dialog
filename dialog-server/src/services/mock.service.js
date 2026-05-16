@@ -1,15 +1,5 @@
-// const generateMockResponse = async (message) => {
-//     return {
-//       role: "assistant",
-//       content: `Mock AI response: ${message}`,
-//     };
-// };
-  
-// module.exports = {
-//     generateMockResponse,
-// };
-
 const generateMockResponse = async (message) => {
+  console.log("service hit");
   await new Promise((resolve) => setTimeout(resolve, 500));
 
   return {
