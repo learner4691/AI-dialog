@@ -1,12 +1,12 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require("cors");
 const chatRoute = require("./routes/chat.route");
 
 const app = express();
 
 app.use(cors());
-
 app.use(express.json());
 
 app.get("/health", (req, res) => {
