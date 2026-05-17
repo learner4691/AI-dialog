@@ -1,9 +1,15 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require("cors"); 
 const chatRoute = require("./routes/chat.route");
 
 const app = express();
+
+//CORS middleware
+app.use(cors({
+    origin: "http://localhost:3000"
+}));
 
 app.use(express.json());
 
