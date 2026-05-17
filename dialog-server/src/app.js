@@ -6,11 +6,7 @@ const chatRoute = require("./routes/chat.route");
 
 const app = express();
 
-//CORS middleware
-app.use(cors({
-    origin: "http://localhost:3000"
-}));
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/health", (req, res) => {
