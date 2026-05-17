@@ -1,4 +1,5 @@
-const { useState } = React;
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -9,35 +10,21 @@ function App() {
 
     const text = input;
 
-    setMessages(prev => [
-      ...prev,
-      { role: "user", content: text }
-    ]);
-
+    setMessages(prev => [...prev, { role: "user", content: text }]);
     setInput("");
 
-    try {
-      const res = await fetch("http://localhost:3001/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message: text })
-      });
+    const res = await fetch("http://localhost:3001/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text })
+    });
 
-      const data = await res.json();
+    const data = await res.json();
 
-      setMessages(prev => [
-        ...prev,
-        { role: "assistant", content: data.content }
-      ]);
-
-    } catch (e) {
-      setMessages(prev => [
-        ...prev,
-        { role: "assistant", content: "Server error" }
-      ]);
-    }
+    setMessages(prev => [
+      ...prev,
+      { role: "assistant", content: data.content }
+    ]);
   };
 
   return (
@@ -57,10 +44,13 @@ function App() {
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           placeholder="Ask whatever you want"
         />
-        <button onClick={sendMessage} disabled={!input.trim()}>Send</button>
+        <button onClick={sendMessage} disabled={!input.trim()}>
+          Send
+        </button>
       </div>
     </div>
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
