@@ -31,7 +31,7 @@ const MessageBubble = styled.div`
       `}
 `;
 
-function MessageList({ messages }) {
+function MessageList({ messages, loading }) {
   return (
     <List>
       {messages.map((m, i) => (
@@ -39,6 +39,12 @@ function MessageList({ messages }) {
           {m.content}
         </MessageBubble>
       ))}
+
+      {loading && (
+        <MessageBubble role="assistant">
+          AI is typing...
+        </MessageBubble>
+      )}
     </List>
   );
 }

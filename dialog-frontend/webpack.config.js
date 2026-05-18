@@ -73,7 +73,7 @@ module.exports = {
         directory: path.join(__dirname, 'public'), //обслуживание файлов из папки public
       },
       {
-        directory: path.join(__dirname, 'dist'), //обслуживание файловы из папки dist
+        directory: path.join(__dirname, 'dist'), //обслуживание файлов из папки dist
       }
     ],
     compress: true,
