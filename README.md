@@ -88,9 +88,11 @@ cd AI-dialog
 ---
 
 ### ▶️ Backend запуск
+⚠️ Для Node 13 иногда требуется ручная установка cors
 ```bash
 cd dialog-server
-npm install
+npm install 
+npm install cors  
 npm run dev
 ```
 
