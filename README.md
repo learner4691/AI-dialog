@@ -2,6 +2,8 @@
 
 AI чат-приложение (Frontend + Backend)
 
+---
+
 ## 🧪 Requirements
 
 ### Backend
@@ -37,11 +39,11 @@ dialog-server/
 ### 🔹 Логика backend
 
 - POST /api/chat
-- вход: { message: string }
+- вход: `{ message: string }`
 - обработка:
-  - если есть OPENAI_API_KEY → OpenAI API
+  - если есть `OPENAI_API_KEY` → OpenAI API
   - если нет → mock-ответ
-- ответ: { reply: string }
+- ответ: `{ reply: string }`
 
 ---
 
@@ -60,7 +62,9 @@ dialog-frontend/
 │  └─ style.css
 ```
 
-### 🔹 Логика UI
+---
+
+## 🔹 Логика UI
 
 1. пользователь вводит сообщение  
 2. отправка на backend  
@@ -68,7 +72,9 @@ dialog-frontend/
 4. приходит ответ  
 5. сообщение добавляется в чат  
 
-### 🎨 UI поведение
+---
+
+## 🎨 UI поведение
 
 - User → справа (синий фон)
 - AI → слева (синий фон)
@@ -81,11 +87,11 @@ dialog-frontend/
 
 ### 🔓 Включение реального API
 
-- добавьте OPENAI_API_KEY в .env
-- установите useOpenAI = true в  
-  src/services/ai.service.js
+- добавьте `OPENAI_API_KEY` в `.env`
+- установите `useOpenAI = true` в  
+  `src/services/ai.service.js`
 
-### 📄 Пример .env
+### 📄 Пример `.env`
 
 ```env
 OPENAI_API_KEY=your_api_key_here
@@ -101,7 +107,7 @@ PORT=3001
 
 ## 🚀 Установка и запуск
 
-### 1. Клонирование проекта
+### ▶️ Clone project
 
 ```bash
 git clone https://github.com/learner4691/AI-dialog.git
@@ -110,7 +116,7 @@ cd AI-dialog
 
 ---
 
-### 2. Backend запуск
+### ▶️ Backend запуск
 
 ```bash
 cd dialog-server
@@ -125,7 +131,7 @@ http://localhost:3001/api/chat
 
 ---
 
-### 3. Frontend запуск
+### ▶️ Frontend запуск
 
 ```bash
 cd dialog-frontend
@@ -142,15 +148,13 @@ http://localhost:3000
 
 ## 🔗 Проверка работы
 
-1. открыть frontend  
-2. ввести сообщение  
-3. получить ответ от AI / mock  
+- открыть frontend  
+- ввести сообщение  
+- получить ответ от AI / mock  
 
 ---
 
 ## ⚙️ Примечание
 
-- если OPENAI_API_KEY не задан → приложение работает в demo режиме
+- если `OPENAI_API_KEY` не задан → приложение работает в demo режиме  
 - проект полностью запускается локально без API ключа
-
-
