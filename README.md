@@ -38,7 +38,7 @@ dialog-server/
 
 ### 🔹 Логика backend
 
-- POST /api/chat
+- POST `/api/chat`
 - вход: `{ message: string }`
 - обработка:
   - если есть `OPENAI_API_KEY` → OpenAI API
@@ -107,7 +107,7 @@ PORT=3001
 
 ## 🚀 Установка и запуск
 
-### ▶️ Clone project
+### ▶️ Клонирование проекта
 
 ```bash
 git clone https://github.com/learner4691/AI-dialog.git
