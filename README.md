@@ -81,13 +81,12 @@ PORT=3001
 ### 1. Клонирование проекта
 ```bash
 git clone https://github.com/learner4691/AI-dialog.git
-cd AI-dialog
 ```
 
 ### 2. Backend запуск
 ⚠️ Для Node 13 иногда требуется ручная установка cors
 ```bash
-cd dialog-server
+cd AI-dialog/dialog-server
 npm install
 npm install cors
 npm run dev
@@ -98,8 +97,9 @@ Backend: [http://localhost:3001/api/chat](http://localhost:3001/api/chat)
 ---
 
 ### 3. Frontend запуск
+Открыть новый терминал 
 ```bash
-cd dialog-frontend
+cd AI-dialog/dialog-frontend
 npm install
 npm start
 ```
